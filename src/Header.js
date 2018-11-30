@@ -8,16 +8,30 @@ export default class Header extends React.Component {
     return (
       <Wrapper>
         <Container>
-          <LeftContainer>
+          <LeftContainer onClick={this.props.onLinkCLick.bind(null, 'top')}>
             <Name>Park Linowy</Name>
             <Site>TARZAN</Site>
           </LeftContainer>
           <CenterContainer>
-            <Logo src={logo} alt="logo" />
+            <Logo
+              src={logo}
+              alt="logo"
+              onClick={this.props.onLinkCLick.bind(null, 'top')}
+            />
           </CenterContainer>
           <RightContainer>
-            <Link href="/#o-nas">O nas</Link>
-            <Link href="/#atrakcje">Atrakcje</Link>
+            <Link
+              onClick={this.props.onLinkCLick.bind(null, 'about-us')}
+              href="/#o-nas"
+            >
+              O nas
+            </Link>
+            <Link
+              onClick={this.props.onLinkCLick.bind(null, 'attractions')}
+              href="/#atrakcje"
+            >
+              Atrakcje
+            </Link>
             <Link href="/#galeria">Galeria</Link>
             <Link href="/#cennik">Cennik</Link>
             <Link href="/#kontakt">Kontakt</Link>
@@ -54,6 +68,7 @@ const LeftContainer = styled.div`
   flex-direction: column;
   padding-left: 30px;
   justify-content: center;
+  cursor: pointer;
 `;
 
 const Name = styled.span`
@@ -77,6 +92,7 @@ const CenterContainer = styled.div`
 
 const Logo = styled.img`
   height: 70px;
+  cursor: pointer;
 `;
 
 const RightContainer = styled.div`
@@ -88,12 +104,15 @@ const RightContainer = styled.div`
   padding-right: 30px;
 `;
 
-const Link = styled.a`
-  text-decoration: none;
+const Link = styled.button`
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #000;
   font-size: 20px;
   padding-left: 20px;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
 `;

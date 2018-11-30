@@ -8,7 +8,7 @@ import { attractions } from './constants';
 export default class Atractions extends React.Component {
   render() {
     return (
-      <Container id="atrakcje">
+      <Container ref={this.props.myRef} id="atrakcje">
         <BackgroundImage />
         <InnerContainer>
           <TitleContainer>

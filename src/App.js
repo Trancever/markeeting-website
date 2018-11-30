@@ -5,51 +5,54 @@ import Banner from './Banner';
 import AboutUs from './AboutUs';
 import Attractions from './Atractions';
 import AnimatedSection from './AnimatedSection';
+import { sections } from './constants';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.aboutUsSection = React.createRef();
+    this.attractionsSection = React.createRef();
+    this.topSection = React.createRef();
+  }
+
+  onLinkCLick = link => {
+    console.log('!@#', link);
+    let ref;
+    switch (link) {
+      case 'about-us':
+        ref = this.aboutUsSection;
+        break;
+      case 'attractions':
+        ref = this.attractionsSection;
+        break;
+      case 'top':
+        ref = this.topSection;
+        break;
+      default:
+        break;
+    }
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
   render() {
     return (
-      <div className="App">
-        <Header />
+      <div ref={this.topSection} className="App">
+        <Header onLinkCLick={this.onLinkCLick} />
         <Banner />
-        <AboutUs />
-        <Attractions />
-        <AnimatedSection
-          color="#F3EED8"
-          direction="left"
-          data={{
-            url:
-              'http://trollandia.pl/sites/default/files/styles/1025x530/public/trollandia-oferty-dla-grup_1.jpg?itok=zlAYo-Gn',
-            title: 'PROGRAMY DLA GRUP SEZON 2017',
-            description:
-              'Oferujemy rożnego rodzaju atrakcje dla różnych grup wiekowych. Możesz w Trollandii wyjazd integracyjny albo wycieczkę klasową. Zapraszamy do zapoznania się z ofertą.',
-            button: 'DOWIEDZ SIĘ WIĘCEJ',
-          }}
-        />
-        <AnimatedSection
-          color="#f7cd00"
-          direction="right"
-          data={{
-            url:
-              'http://trollandia.pl/sites/default/files/styles/1025x530/public/urodziny-w_trollandii-4.jpg?itok=HhbB387C',
-            title: 'PROGRAMY DLA GRUP SEZON 2017',
-            description:
-              'Aktywne urodziny w Parku Linowym Trollandia. Oferujemy 4 różne pakiety urodzinowe, świetne miejsce i doskonałą zabawę. Spędzisz u nas wraz z przyjaciółmi świetny czas.',
-            button: 'DOWIEDZ SIĘ WIĘCEJ',
-          }}
-        />
-        <AnimatedSection
-          color="#63C226"
-          direction="left"
-          data={{
-            url:
-              'http://trollandia.pl/sites/default/files/styles/1025x530/public/bezpieczenstwo22.jpg?itok=Uq_vlS-o',
-            title: 'BEZPIECZEŃSTWO',
-            description:
-              'W budowanych przez nas parkach linowych bezpieczeństwo jest zawsze priorytetowym czynnikiem. Dlatego właśnie stosujemy rozwiązania i technologie zapewniające jego najwyższy, światowy poziom. Wszystkie nasze konstrukcje posiadają dokumentacje statyczną wykonywaną w specjalistycznym, niemieckim programie Dlubal do obliczeń konstrukcji przestrzennych.',
-            button: 'DOWIEDZ SIĘ WIĘCEJ',
-          }}
-        />
+        <AboutUs myRef={this.aboutUsSection} />
+        <Attractions myRef={this.attractionsSection} />
+        {sections.map((section, index) => (
+          <AnimatedSection
+            key={index}
+            data={section}
+            color={section.color}
+            direction={index % 2 ? 'right' : 'left'}
+          />
+        ))}
       </div>
     );
   }

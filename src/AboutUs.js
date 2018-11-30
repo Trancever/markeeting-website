@@ -6,7 +6,7 @@ import Title from './Title';
 export default class AboutUs extends React.Component {
   render() {
     return (
-      <Container id="o-nas">
+      <Container ref={this.props.myRef} id="o-nas">
         <BackgroundImage />
         <Title color="#63c226">O NAS</Title>
         <Description>Bla bla bla</Description>
