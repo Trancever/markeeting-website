@@ -20,21 +20,19 @@ export default class Header extends React.Component {
             />
           </CenterContainer>
           <RightContainer>
-            <Link
-              onClick={this.props.onLinkCLick.bind(null, 'about-us')}
-              href="/#o-nas"
-            >
-              O nas
+            <Link onClick={this.props.onLinkCLick.bind(null, 'our-parks')}>
+              Parki
             </Link>
-            <Link
-              onClick={this.props.onLinkCLick.bind(null, 'attractions')}
-              href="/#atrakcje"
-            >
+            <Link onClick={this.props.onLinkCLick.bind(null, 'attractions')}>
               Atrakcje
             </Link>
-            <Link href="/#galeria">Galeria</Link>
-            <Link href="/#cennik">Cennik</Link>
-            <Link href="/#kontakt">Kontakt</Link>
+            <Link onClick={this.props.onLinkCLick.bind(null, 'offer')}>
+              Oferta
+            </Link>
+            <Link onClick={this.props.onLinkCLick.bind(null, 'security')}>
+              Bezpieczeństwo
+            </Link>
+            <Link>Kontakt</Link>
           </RightContainer>
         </Container>
       </Wrapper>

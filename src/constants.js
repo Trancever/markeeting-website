@@ -44,18 +44,18 @@ export const sections = [
   {
     url:
       'http://trollandia.pl/sites/default/files/styles/1025x530/public/trollandia-oferty-dla-grup_1.jpg?itok=zlAYo-Gn',
-    title: 'PROGRAMY DLA GRUP SEZON 2017',
+    title: 'PROGRAMY DLA GRUP SEZON 2018',
     description:
-      'Oferujemy rożnego rodzaju atrakcje dla różnych grup wiekowych. Możesz w Trollandii wyjazd integracyjny albo wycieczkę klasową. Zapraszamy do zapoznania się z ofertą.',
+      'Oferujemy rożnego rodzaju atrakcje dla różnych grup wiekowych. Możesz w Tarzanie zorganizować wyjazd integracyjny albo wycieczkę klasową. Zapraszamy do zapoznania się z ofertą.',
     button: 'DOWIEDZ SIĘ WIĘCEJ',
     color: '#F3DDE8',
   },
   {
     url:
       'http://trollandia.pl/sites/default/files/styles/1025x530/public/urodziny-w_trollandii-4.jpg?itok=HhbB387C',
-    title: 'URODZINY W TROLLANDII',
+    title: 'PROGRAMY INDYWIDUALNE SEZON 2018',
     description:
-      'Aktywne urodziny w Parku Linowym Trollandia. Oferujemy 4 różne pakiety urodzinowe, świetne miejsce i doskonałą zabawę. Spędzisz u nas wraz z przyjaciółmi świetny czas.',
+      'Oferujemy rónego rodzaju atrakcje dla indywidualnych klientów. Spędzisz u nas wraz z przyjaciółmi świetny czas.',
     button: 'DOWIEDZ SIĘ WIĘCEJ',
     color: '#F7cd00',
   },

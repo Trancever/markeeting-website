@@ -31,7 +31,7 @@ export default class Banner extends React.Component {
       this.setState(({ imageIndex }) => ({
         imageIndex: imageIndex === 2 ? 0 : imageIndex + 1,
       }));
-    }, 5000);
+    }, 3000);
   }
 
   componentWillUnmount() {
