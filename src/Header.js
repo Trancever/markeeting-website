@@ -32,7 +32,9 @@ export default class Header extends React.Component {
             <Link onClick={this.props.onLinkCLick.bind(null, 'security')}>
               Bezpieczeństwo
             </Link>
-            <Link>Kontakt</Link>
+            <Link onClick={this.props.onLinkCLick.bind(null, 'contact')}>
+              Kontakt
+            </Link>
           </RightContainer>
         </Container>
       </Wrapper>

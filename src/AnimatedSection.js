@@ -94,12 +94,13 @@ const Image = styled.div`
   height: 100%;
   background-image: url(${p => p.url});
   background-size: 100% 100%;
-  transition: left 0.7s ease-out, right 0.7s ease-out;
+  transition: transform 0.7s ease-out;
+
   ${p => {
     return p.direction === 'left'
-      ? `left: ${p.position}px`
-      : `right: ${p.position}px`;
-  }}
+      ? `transform: translateX(${p.position}px)`
+      : `transform: translateX(-${p.position}px)`;
+  }};
 `;
 
 const Title = styled.span`
@@ -127,6 +128,7 @@ const Button = styled.button`
   cursor: pointer;
   width: 230px;
   transition: color 0.5s, background-color 0.5s;
+  outline: none;
 
   &:hover {
     color: #fff;

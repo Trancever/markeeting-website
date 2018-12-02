@@ -5,6 +5,7 @@ import Banner from './Banner';
 import AboutUs from './AboutUs';
 import Attractions from './Atractions';
 import AnimatedSection from './AnimatedSection';
+import ContactSection from './ContactSection';
 import { sections } from './constants';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
     this.topSection = React.createRef();
     this.offerSection = React.createRef();
     this.securitySection = React.createRef();
+    this.contactSection = React.createRef();
   }
 
   onLinkCLick = link => {
@@ -35,6 +37,9 @@ class App extends Component {
         break;
       case 'security':
         ref = this.securitySection;
+        break;
+      case 'contact':
+        ref = this.contactSection;
         break;
       default:
         break;
@@ -68,6 +73,9 @@ class App extends Component {
             color={sections[2].color}
             direction="left"
           />
+        </div>
+        <div ref={this.contactSection}>
+          <ContactSection />
         </div>
       </div>
     );
