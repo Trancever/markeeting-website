@@ -9,8 +9,8 @@ export default class Header extends React.Component {
       <Wrapper>
         <Container>
           <LeftContainer onClick={this.props.onLinkCLick.bind(null, 'top')}>
-            <Name>Park Linowy</Name>
             <Site>TARZAN</Site>
+            <Name>Park Linowy</Name>
           </LeftContainer>
           <CenterContainer>
             <Logo
@@ -72,18 +72,18 @@ const LeftContainer = styled.div`
 `;
 
 const Name = styled.span`
-  font-size: 24px;
+  font-size: 20px;
+  margin-left: 2px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: extra-light;
-  height: 25px;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  /* text-shadow: 1px 1px rgba(0, 0, 0, 0.2); */
 `;
 
 const Site = styled.span`
-  font-size: 24px;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  font-size: 36px;
+  height: 28px;
+  font-family: 'Alegreya sans', sans-serif;
+  text-shadow: 2px 2px 1px rgba(81, 173, 24, 0.9);
 `;
 
 const CenterContainer = styled.div`

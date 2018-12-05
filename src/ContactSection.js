@@ -162,4 +162,5 @@ const MapTitle = styled.div`
   font-size: 48px;
   font-family: 'Roboto slab', sans-serif;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
 `;

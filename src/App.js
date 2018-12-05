@@ -45,7 +45,7 @@ class App extends Component {
         break;
     }
     window.scrollTo({
-      top: ref.current.offsetTop,
+      top: ref.current.offsetTop - 100,
       behavior: 'smooth',
     });
   };
