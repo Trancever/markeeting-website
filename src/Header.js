@@ -9,16 +9,12 @@ export default class Header extends React.Component {
       <Wrapper>
         <Container>
           <LeftContainer onClick={this.props.onLinkCLick.bind(null, 'top')}>
-            <Site>TARZAN</Site>
-            <Name>Park Linowy</Name>
-          </LeftContainer>
-          <CenterContainer>
             <Logo
               src={logo}
               alt="logo"
               onClick={this.props.onLinkCLick.bind(null, 'top')}
             />
-          </CenterContainer>
+          </LeftContainer>
           <RightContainer>
             <Link onClick={this.props.onLinkCLick.bind(null, 'our-parks')}>
               Parki
@@ -64,7 +60,7 @@ const Container = styled.div`
 
 const LeftContainer = styled.div`
   display: flex;
-  flex: 4;
+  flex: 0.8;
   flex-direction: column;
   padding-left: 30px;
   justify-content: center;

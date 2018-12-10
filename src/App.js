@@ -7,6 +7,7 @@ import Attractions from './Atractions';
 import AnimatedSection from './AnimatedSection';
 import ContactSection from './ContactSection';
 import { sections } from './constants';
+import Footer from './Footer';
 
 class App extends Component {
   constructor(props) {
@@ -77,6 +78,7 @@ class App extends Component {
         <div ref={this.contactSection}>
           <ContactSection />
         </div>
+        <Footer />
       </div>
     );
   }
