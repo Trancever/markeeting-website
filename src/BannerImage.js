@@ -28,6 +28,7 @@ const Image = styled.div`
 const Text = styled.span`
   font-size: 54px;
   color: #efefef;
+  text-align: center;
   font-family: 'Alegreya Sans', sans-serif;
   font-weight: bold;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);

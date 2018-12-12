@@ -6,6 +6,7 @@ import fbIcon from './assets/fb.png';
 import twitterIcon from './assets/twitter.png';
 import ytIcon from './assets/yt.png';
 import instaIcon from './assets/insta.png';
+import { device } from './device';
 
 export default class Footer extends React.Component {
   render() {
@@ -26,7 +27,7 @@ export default class Footer extends React.Component {
               <Link>
                 <Icon src={ytIcon} />
               </Link>
-              <Link>
+              <Link margin>
                 <Icon src={instaIcon} />
               </Link>
             </TitleContainer>
@@ -95,7 +96,7 @@ export default class Footer extends React.Component {
 }
 
 const FooterContainer = styled.footer`
-  width: 100%;
+  width: 100vw;
   background-color: #121212;
   padding-top: 50px;
   border-top: 1px solid #333;
@@ -107,12 +108,22 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding-left: 100px;
   padding-right: 100px;
+
+  @media ${device.mobile} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const Top = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const InnerContainer = styled.div`
@@ -169,7 +180,7 @@ const Link = styled.div`
   width: 35px;
   height: 35px;
   border-radius: 18px;
-  margin-right: 20px;
+  margin-right: ${p => (!p.margin ? 20 : 0)}px;
   display: flex;
   justify-content: center;
   align-items: center;

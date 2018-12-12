@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from './Title';
 
+import { device } from './device';
+
 export default class ContactForm extends React.Component {
   render() {
     return (
@@ -21,12 +23,13 @@ export default class ContactForm extends React.Component {
             <TextArea
               id="wiadomosc"
               rows="10"
-              cols="50"
               type="text"
               placeholder="Wiadomość"
             />
           </Field>
-          <Button>Wyślji</Button>
+          <ButtonContainer>
+            <Button>Wyślji</Button>
+          </ButtonContainer>
         </InnerContainer>
       </Container>
     );
@@ -40,6 +43,10 @@ const Container = styled.div`
   text-align: center;
   padding-top: 30px;
   flex: 1;
+
+  @media ${device.mobile} {
+    padding-top: 50px;
+  }
 `;
 
 const InnerContainer = styled.div`
@@ -47,6 +54,10 @@ const InnerContainer = styled.div`
   margin: 50px 100px;
   flex-direction: column;
   flex: 1;
+
+  @media ${device.mobile} {
+    margin: 20px 50px;
+  }
 `;
 
 const Field = styled.div`
@@ -105,5 +116,17 @@ const Button = styled.button`
 
   &:hover {
     color: #fff;
+  }
+
+  @media ${device.mobile} {
+    width: 180px;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+
+  @media ${device.mobile} {
+    justify-content: center;
   }
 `;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Title from './Title';
 import Attraction from './Attraction';
 import { attractions } from './constants';
+import { device } from './device';
 
 export default class Atractions extends React.Component {
   render() {
@@ -26,7 +27,7 @@ export default class Atractions extends React.Component {
 }
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   position: relative;
   display: flex;
   justify-content: center;
@@ -48,12 +49,17 @@ const InnerContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+
+  @media ${device.mobile} {
+    margin: 100px 10px 50px 10px;
+  }
 `;
 
 const TitleContainer = styled.div`
   height: 100px;
   width: 100%;
   display: flex;
+  text-align: center;
   justify-content: center;
   margin-bottom: 50px;
 `;

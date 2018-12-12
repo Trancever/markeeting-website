@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Title from './Title';
+import { device } from './device';
 
 export default class AboutUs extends React.Component {
   render() {
@@ -43,14 +44,14 @@ export default class AboutUs extends React.Component {
 }
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   position: relative;
 `;
 
 const BackgroundImage = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   position: absolute;
   background-image: url('http://trollandia.pl/sites/all/themes/trollandia/css/images/tło-menu-parki.jpg');
@@ -75,18 +76,30 @@ const ContentContainer = styled.div`
   padding-top: 50px;
   padding-bottom: 100px;
   margin-bottom: 100px;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+  }
 `;
 
 const ParkContainer = styled.div`
   height: 330px;
   display: flex;
   width: 33%;
+
+  @media ${device.mobile} {
+    width: 60%;
+    height: 270px;
+    margin-bottom: 50px;
+  }
 `;
 
 const Park = styled.div`
   margin-left: 20px;
   margin-right: 20px;
-  baxkground-color: green;
   display: flex;
   flex: 1;
   position: relative;

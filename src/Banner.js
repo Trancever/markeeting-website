@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import BannerImage from './BannerImage';
+import { device } from './device';
 
 const assets = [
   {
@@ -51,9 +52,13 @@ export default class Banner extends React.Component {
 }
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 750px;
   background-color: #000;
   margin-top: 100px;
   position: relative;
+
+  @media ${device.mobile} {
+    height: 400px;
+  }
 `;

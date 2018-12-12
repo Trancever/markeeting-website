@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Map from './Map';
 
+import { device } from './device';
 import ContactForm from './ContactForm';
 
 export default class ContactSection extends React.Component {
@@ -23,11 +24,15 @@ export default class ContactSection extends React.Component {
 }
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   background-color: #101010;
   flex-direction: row;
   padding-bottom: 70px;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -38,6 +43,11 @@ const LeftContainer = styled.div`
 const RightContainer = styled.div`
   display: flex;
   flex: 1;
+
+  @media ${device.mobile} {
+    height: 400px;
+    margin-top: 40px;
+  }
 `;
 
 const MapContainer = styled.div`
@@ -50,6 +60,7 @@ const MapTitle = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
+  text-align: center;
   width: 100%;
   height: 100%;
   color: #63c226;
@@ -58,4 +69,8 @@ const MapTitle = styled.div`
   font-family: 'Roboto slab', sans-serif;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
   pointer-events: none;
+
+  @media ${device.mobile} {
+    margin-top: 10px;
+  }
 `;

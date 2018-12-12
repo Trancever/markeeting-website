@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { device } from './device';
+
 export default class Attraction extends React.Component {
   render() {
     const { data } = this.props;
@@ -20,6 +22,10 @@ export default class Attraction extends React.Component {
 const Container = styled.div`
   width: 33%;
   margin-bottom: 20px;
+
+  @media ${device.mobile} {
+    width: 50%;
+  }
 `;
 
 const InnerContainer = styled.div`
@@ -39,6 +45,7 @@ const Image = styled.img`
 const Title = styled.span`
   font-size: 17px;
   font-family: 'Roboto slab', sans-serif;
+  text-align: center;
 `;
 
 const Color = styled.span`
