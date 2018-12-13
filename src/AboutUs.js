@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { navigate } from '@reach/router';
 
 import Title from './Title';
 import { device } from './device';
@@ -14,7 +15,7 @@ export default class AboutUs extends React.Component {
         </TitleContainer>
         <ContentContainer>
           <ParkContainer>
-            <Park>
+            <Park onClick={() => navigate('/park/piotrkow')}>
               <ParkImage url="http://trollandia.pl/sites/default/files/styles/miniaturka_park/public/parki.linowe.0406.jpg?itok=xjpcbksb" />
               <ParkBottomSheet>
                 <City>Piotrków Tryb.</City>
@@ -22,7 +23,7 @@ export default class AboutUs extends React.Component {
             </Park>
           </ParkContainer>
           <ParkContainer>
-            <Park>
+            <Park onClick={() => navigate('/park/pabianice')}>
               <ParkImage url="http://trollandia.pl/sites/default/files/styles/miniaturka_park/public/szklarska-home.jpg?itok=0dthphIO" />
               <ParkBottomSheet>
                 <City>Pabianice</City>
@@ -30,7 +31,7 @@ export default class AboutUs extends React.Component {
             </Park>
           </ParkContainer>
           <ParkContainer>
-            <Park>
+            <Park onClick={() => navigate('/park/aleksandrow')}>
               <ParkImage url="http://trollandia.pl/sites/default/files/styles/miniaturka_park/public/13920677_10208825787035991_900227806762529075_n_brenna_0.jpg?itok=d1hb3sXA" />
               <ParkBottomSheet>
                 <City>Aleksandrów Łódzki</City>
@@ -70,8 +71,8 @@ const ContentContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  margin-left: 330px;
-  margin-right: 330px;
+  margin-left: 200px;
+  margin-right: 200px;
   z-index: 1;
   padding-top: 50px;
   padding-bottom: 100px;
@@ -98,8 +99,8 @@ const ParkContainer = styled.div`
 `;
 
 const Park = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   display: flex;
   flex: 1;
   position: relative;
@@ -111,6 +112,11 @@ const Park = styled.div`
 
   &:hover {
     background-color: rgba(247, 205, 0, 0.85);
+  }
+
+  @media ${device.mobile} {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `;
 

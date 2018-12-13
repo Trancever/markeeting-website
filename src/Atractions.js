@@ -8,15 +8,17 @@ import { device } from './device';
 
 export default class Atractions extends React.Component {
   render() {
+    const { name = 'TARZANA', size = attractions.length } = this.props;
+
     return (
       <Container ref={this.props.myRef} id="atrakcje">
         <BackgroundImage />
         <InnerContainer>
           <TitleContainer>
-            <Title>ATRAKCJE TARZANA</Title>
+            <Title>ATRAKCJE {name}</Title>
           </TitleContainer>
           <AttractionsContainer>
-            {attractions.map((attraction, index) => (
+            {attractions.slice(0, size).map((attraction, index) => (
               <Attraction key={index} data={attraction} />
             ))}
           </AttractionsContainer>

@@ -49,6 +49,7 @@ export const sections = [
       'Oferujemy rożnego rodzaju atrakcje dla różnych grup wiekowych. Możesz w Tarzanie zorganizować wyjazd integracyjny albo wycieczkę klasową. Zapraszamy do zapoznania się z ofertą.',
     button: 'DOWIEDZ SIĘ WIĘCEJ',
     color: '#F3DDE8',
+    route: '',
   },
   {
     url:
@@ -58,6 +59,7 @@ export const sections = [
       'Oferujemy rónego rodzaju atrakcje dla indywidualnych klientów. Spędzisz u nas wraz z przyjaciółmi świetny czas.',
     button: 'DOWIEDZ SIĘ WIĘCEJ',
     color: '#F7cd00',
+    route: '',
   },
   {
     url:
@@ -67,5 +69,6 @@ export const sections = [
       'W budowanych przez nas parkach linowych bezpieczeństwo jest zawsze priorytetowym czynnikiem. Dlatego właśnie stosujemy rozwiązania i technologie zapewniające jego najwyższy, światowy poziom. Wszystkie nasze konstrukcje posiadają dokumentacje statyczną wykonywaną w specjalistycznym, niemieckim programie Dlubal do obliczeń konstrukcji przestrzennych.',
     button: 'DOWIEDZ SIĘ WIĘCEJ',
     color: '#63C226',
+    route: 'regulations',
   },
 ];

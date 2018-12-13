@@ -158,10 +158,10 @@ const ExpandedLink = styled.button`
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #000;
-  font-size: 20px;
+  font-size: 23px;
   width: 100%;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-  background-color: rgba(99, 194, 38, 0.7);
+  background-color: rgba(99, 194, 38, 0.8);
   border: none;
   cursor: pointer;
   outline: none;

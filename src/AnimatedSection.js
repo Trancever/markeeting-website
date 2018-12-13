@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import VisibilitySensor from 'react-visibility-sensor';
+import { navigate } from '@reach/router';
+
+import { device } from './device';
 
 export default class AnimatedSection extends React.Component {
   state = {
@@ -29,7 +32,9 @@ export default class AnimatedSection extends React.Component {
       <>
         <Title>{data.title}</Title>
         <Description>{data.description}</Description>
-        <Button>{data.button}</Button>
+        <Button onClick={() => navigate(`/${data.route}`)}>
+          {data.button}
+        </Button>
       </>
     );
   };
@@ -65,10 +70,14 @@ export default class AnimatedSection extends React.Component {
 }
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   height: 500px;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -80,12 +89,23 @@ const LeftContainer = styled.div`
   padding-left: 80px;
   padding-right: 70px;
   padding-top: 100px;
+
+  @media ${device.mobile} {
+    padding-left: 30px;
+    padding-right: 30px;
+    flex: 1;
+  }
 `;
 
 const RightContainer = styled.div`
   position: relative;
   flex: 7;
   background-color: ${p => p.color};
+
+  @media ${device.mobile} {
+    flex: 1;
+    display: none;
+  }
 `;
 
 const Image = styled.div`

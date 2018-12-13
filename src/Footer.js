@@ -97,6 +97,7 @@ export default class Footer extends React.Component {
 
 const FooterContainer = styled.footer`
   width: 100vw;
+  position: relative;
   background-color: #121212;
   padding-top: 50px;
   border-top: 1px solid #333;

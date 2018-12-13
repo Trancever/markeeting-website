@@ -42,7 +42,7 @@ export default class Banner extends React.Component {
   render() {
     const { imageIndex } = this.state;
     return (
-      <Container>
+      <Container ref={this.props.myRef}>
         <BannerImage data={assets[0]} visible={imageIndex === 0} />
         <BannerImage data={assets[1]} visible={imageIndex === 1} />
         <BannerImage data={assets[2]} visible={imageIndex === 2} />
@@ -59,6 +59,6 @@ const Container = styled.div`
   position: relative;
 
   @media ${device.mobile} {
-    height: 400px;
+    height: 350px;
   }
 `;
